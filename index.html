@@ -5,13 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>为xyq做的网页</title>
-    <style>  
-      body {
-        margin: 0;
+    <style>
+      * {
+          padding: 0;
+          margin: 0;
       }
-    </style>
+
+      body {
+          display: flex;
+          justify-content:left;
+          align-items:center;
+          background-color: rgba(250, 176, 250, 0.755);
+      }
+
+      main {
+          display: grid;
+          gap: 2rem;
+          grid-template-columns: repeat(3, 200px);
+          overflow-y: hidden;
+          padding: 100px;
+      }
+
+      section {
+          display: flex;
+          gap: 2rem;
+          flex-direction: column;
+      }
+
+      section:nth-child(1),
+      section:nth-child(3) {
+          /* 应用平滑的动画 */
+          animation: scroller linear;
+          /* 动画根据滚动进行 */
+          animation-timeline: scroll(root);
+          /* 子元素反转排列 */
+          flex-direction: column-reverse;
+          /* 初始位置设置为底部 */
+          translate: 0% calc(-100% + 100vh);
+      }
+
+      section img {
+          box-shadow: 0 0 10px #0002;
+          border-radius: 5px;
+          transition: .3s;
+      }
+
+      section img:hover {
+          transform: scale(1.05);
+          box-shadow: 0 0 20px rgba(150, 50, 50, 0.5);
+      }
+
+      @keyframes scroller {
+          to {
+              /* 最终位置设置为顶部 */
+              translate: 0% calc(100% - 100vh);
+          }
+      }
+  </style>
   </head>
   <body>
+    <main>
+      <section>
+          <img src="https://s2.loli.net/2024/09/26/9AxaPhZ5JQlCtEu.jpg" />
+          <img src="https://s2.loli.net/2024/09/27/ryvdq15VnjStFem.jpg" />
+          <img src="https://s2.loli.net/2024/09/27/2mrFuenOf9DdXSE.jpg" />
+          <img src="https://s2.loli.net/2024/09/27/UbZxPFVdj8HpJMr.jpg" />
+          <img src="https://s2.loli.net/2024/09/27/YFIe6yUhvCo1uK9.jpg" />
+          <img src="https://s2.loli.net/2024/09/27/CTY96kusBfXm7nO.jpg" />
+          <img src="https://s2.loli.net/2024/09/27/MuYrF71S2pfgTqy.jpg" />
+      </section>
+      <section>
+        <img src="https://s2.loli.net/2024/09/27/lemIYFxNjbrHnt8.jpg" />
+          <img src="https://s2.loli.net/2024/09/27/Q8d5fGT4ORYhcp6.jpg" />
+          <img src="https://s2.loli.net/2024/09/27/GAyRMO6E3YIKPHF.jpg" />
+          <img src="https://s2.loli.net/2024/09/27/ru8S1ZAJcVnyitl.jpg" />
+          <img src="https://s2.loli.net/2024/09/28/4OI3YTrxWSzeFmZ.jpg" />
+          <img src="https://s2.loli.net/2024/09/28/7EGkxowtpM5eIPZ.jpg" />
+          <img src="https://s2.loli.net/2024/09/28/ODrNsyXZJMSqlUu.jpg" />
+      </section>
+      <section>
+        <img src="https://s2.loli.net/2024/09/27/kNznexwOuZPiXrh.jpg" />
+        <img src="https://s2.loli.net/2024/09/27/R53OHuITVbNhZnf.jpg" />
+        <img src="https://s2.loli.net/2024/09/28/1oYZ7GHCnes2jBN.jpg" />
+        <img src="https://s2.loli.net/2024/09/28/hAYVM4zGrWdlTLb.jpg" />
+        <img src="https://s2.loli.net/2024/09/28/ME4mbcUFlzn2hQ1.jpg" />
+        <img src="https://s2.loli.net/2024/09/28/cZLiXGJDSmsBrdR.jpg" />
+        <img src="https://s2.loli.net/2024/09/28/g8fdcZXbo1yuG5H.jpg" />
+        <img src="https://s2.loli.net/2024/09/28/6yCThvonY9bNHMi.jpg" />
+      </section>
+
+  </main>
     <div class="sildershow middle">
 	  <div style="
         background-color: rgb(211, 177, 243);
@@ -26,7 +109,7 @@
         <embed src="https://e146rj.58u.cn/a/bwNpQYY/" width="600px" height="300px" alt="《圣诞星》"><p>另一半视频到底去哪了呢</p>
     </div>
       <div style="
-      max-width: 600px;
+      max-width: 400px;
       margin: auto;
       padding: auto;
       line-height: 1.7;
@@ -34,7 +117,7 @@
       <div style="background-color: rgb(225, 240, 255);
       text-align:left;
       padding: 50px;
-      max-width: 600px;
+      max-width: 400px;
       margin: auto;
       line-height: 1.7;">
     <img src="https://c-ssl.duitang.com/uploads/blog/202204/20/20220420232405_308b2.gif" alt="小耶1" width="100xp" height="100xp"> 
@@ -52,8 +135,9 @@
       <div style="
         background-color: rgb(211, 177, 243);
         text-align: center;
-        padding: 400px;
+        padding: 100px;
         font-size: medium;">
         </div>
+        <embed height="0" width="0" src="http://music.163.com/song/media/outer/url?id=1927693793.mp3"></embed>
   </body>
 </html>
